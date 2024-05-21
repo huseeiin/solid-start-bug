@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "version": "vinxi version",
+    "migrate": "drizzle-kit generate --dialect=sqlite --schema=src/lib/schema.ts"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "@solidjs/meta": "^0.29.4",
+    "@solidjs/router": "^0.13.3",
+    "@solidjs/start": "1.0.0-rc.1",
+    "@types/better-sqlite3": "^7.6.10",
+    "better-sqlite3": "^10.0.0",
+    "drizzle-kit": "^0.21.2",
+    "drizzle-orm": "^0.30.10",
+    "nanoid": "^5.0.7",
+    "sass": "^1.77.2",
+    "solid-js": "^1.8.17",
+    "typescript": "^5.4.5",
+    "vinxi": "^0.3.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

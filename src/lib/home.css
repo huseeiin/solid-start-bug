@@ -1,0 +1,19 @@
+h1 {
+  display: flex;
+}
+
+h1 svg {
+  margin-right: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  p:first-of-type {
+    color: #50bb1c;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  p:first-of-type {
+    color: #27650b;
+  }
+}

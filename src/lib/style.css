@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Minecraftia-Regular";
+  src: url("Minecraftia-Regular.ttf");
+  font-display: swap;
+}
+
+nav img {
+  user-select: none;
+  margin-bottom: 1rem;
+}
