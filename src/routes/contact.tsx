@@ -32,11 +32,8 @@ export default function Contact() {
 
   return (
     <main>
-      <Meta
-        name="description"
-        content="Contact GazelleMC (we sell Minecraft: Java & Bedrock Edition) in case you have any questions"
-      />
-      <Title>Contact – Minecraft for $10.00</Title>
+      <Meta name="description" content="Contact" />
+      <Title>Contact</Title>
       <h1>Contact</h1>
       {submission.result && <p>{submission.result.message}</p>}
       <Suspense fallback={<p>Loading...</p>}>

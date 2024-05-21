@@ -6,15 +6,16 @@ import * as schema from "./schema";
 import { action, cache, revalidate } from "@solidjs/router";
 import { getCookie, setCookie } from "vinxi/http";
 import { eq } from "drizzle-orm";
+import { migrate } from "drizzle-orm/better-sqlite3/migrator";
 
 export const getDb = () => {
-  "use server";
+  const db = drizzle(new Database("db.sqlite"), { schema });
 
-  return drizzle(new Database("db.sqlite"), { schema });
+  migrate(db, { migrationsFolder: "drizzle" });
+
+  return db;
 };
 export const getChat = cache(async () => {
-  "use server";
-
   const cookie = getCookie("chat_session");
   if (!cookie) return null;
 
@@ -33,7 +34,7 @@ export const createChat = action(async (data: FormData) => {
   if (response) {
     const body = new FormData();
 
-    body.set("secret", "6LdyF4wpAAAAAAAV2ie2weMyZXMhUZMAauRvs1qX");
+    body.set("secret", "SECRET");
     body.set("response", response);
 
     const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
